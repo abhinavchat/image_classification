@@ -8,10 +8,15 @@ class Config(object):
     TESTING=False
 
 class DevelopmentConfig(Config):
-    pass
+    DEBUG=True
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI') or 'sqlite:////' + os.path.join(base_path, 'dev.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS=False
 
 class TestingConfig(Config):
-    pass
+    DEBUG = True
+    TESTING=True
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI') or 'sqlite:////' + os.path.join(base_path, 'test.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class ProductionConfig(Config):
     pass
