@@ -14,7 +14,7 @@
 {% block navbar %}
     <nav class="navbar navbar-default">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{ url_for('index') }}">CatDog Classifier</a>
+            <a class="navbar-brand" href="{{ url_for('main.index') }}">CatDog Classifier</a>
         </div>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="nav navbar-nav navbar-right">
@@ -23,7 +23,7 @@
                     <span class="navbar-text">Welcome, {{ current_user.username }}</span>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+                    <a href="{{ url_for('auth.logout') }}" class="nav-link">Logout</a>
                 </li>
                 {% endif %}
             </ul>
