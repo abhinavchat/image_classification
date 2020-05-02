@@ -4,6 +4,7 @@ from config import create_config
 from image_classification.models import User
 from app import load_user
 from image_classification.auth.forms import LoginForm, SignupForm
+from image_classification.main.forms import PredictionForm
 
 
 class TestBasic(unittest.TestCase):
