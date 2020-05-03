@@ -1,6 +1,7 @@
 *.vscode/
 .idea/
 __pycache__/
+uploads/
 *.log
 *.h5
 *.pb

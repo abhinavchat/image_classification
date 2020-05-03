@@ -6,6 +6,7 @@ class Config(object):
     SECRET_KEY='thisisasupersecretkey'
     DEBUG=False
     TESTING=False
+    FILE_UPLOAD_PATH=os.getenv('UPLOAD_PATH') or '/home/abhinavchat/workspace/tutorials/image_classification/image_classification/static/uploads'
 
 class DevelopmentConfig(Config):
     DEBUG=True

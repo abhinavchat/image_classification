@@ -4,8 +4,8 @@ from PIL import Image
 import numpy as np
 from io import BytesIO
 
-def image_to_numpy(file_storage_img):
-    npimg = Image.open(BytesIO(file_storage_img.read())).convert("RGB")
+def image_to_numpy(image_path):
+    npimg = Image.open(image_path).convert("RGB")
     npimg = npimg.resize((228, 228), Image.ANTIALIAS)
     npimg = keras.preprocessing.image.img_to_array(npimg)
     npimg = np.array([npimg])
