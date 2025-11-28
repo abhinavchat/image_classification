@@ -6,7 +6,7 @@ from io import BytesIO
 
 def image_to_numpy(image_path):
     npimg = Image.open(image_path).convert("RGB")
-    npimg = npimg.resize((228, 228), Image.ANTIALIAS)
+    npimg = npimg.resize((64, 64))
     npimg = keras.preprocessing.image.img_to_array(npimg)
     npimg = np.array([npimg])
     print(npimg.shape)
@@ -14,10 +14,10 @@ def image_to_numpy(image_path):
 
 def get_prediction(npimage):
     class_map = {"0":"Cat", "1":"Dog"}
-    model_path = '/home/abhinavchat/workspace/tutorials/image_classification/image_classification/assets/cat_dog.h5'
+    model_path = '/Users/abhinavchat/workspace/code/personal/image_classification/image_classification/assets/cat_dog.h5'
     print(model_path)
     model = keras.models.load_model(model_path)
-    k = model.predict(npimage)
+    k = model.predict(npimage).flatten()
     print(k)
     p = np.argmax(keras.utils.to_categorical(k>0.5), axis=-1)
     print(class_map[str(p[0])])

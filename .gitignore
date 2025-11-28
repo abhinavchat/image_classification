@@ -3,6 +3,5 @@
 __pycache__/
 uploads/
 *.log
-*.h5
 *.pb
 *.db
